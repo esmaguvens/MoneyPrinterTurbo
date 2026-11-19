@@ -198,6 +198,24 @@ muapi_max_duration = 12
 muapi_poll_interval = 5
 muapi_run_timeout = 1800
 
+# fal.ai powers the short drama mode (python -m app.services.drama, see
+# docs/drama.md): photoreal character portraits plus Veo 3.1 shots with
+# lip-synced dialogue. Create a key at https://fal.ai/dashboard/keys.
+# When empty, the FAL_KEY environment variable is used. Rendering is paid per
+# portrait and per second of video; the CLI requires --yes before spending.
+fal_api_key = ""
+fal_drama_image_model = "fal-ai/nano-banana-pro"
+fal_drama_reference_video_model = "fal-ai/veo3.1/fast/reference-to-video"
+fal_drama_text_video_model = "fal-ai/veo3.1/fast"
+# "720p", "1080p" or "4k" (4k costs about twice as much per second).
+fal_drama_resolution = "1080p"
+fal_drama_shot_seconds = 8
+# Used only for cost estimates; check https://fal.ai/pricing.
+fal_drama_video_price_per_second = 0.15
+fal_drama_image_price = 0.15
+# "1" (strictest) to "6" (least strict).
+fal_drama_safety_tolerance = "4"
+
 # useapi.net (third-party API) generates clips on your own accounts: Veo 3.1
 # and Gemini Omni Flash on your Google AI plan through Google Flow or Google
 # Vids, Kling on your Kling AI account, and Seedance on your Dreamina account.
